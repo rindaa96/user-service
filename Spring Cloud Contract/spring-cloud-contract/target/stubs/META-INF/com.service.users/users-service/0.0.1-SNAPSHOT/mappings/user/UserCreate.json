@@ -1,0 +1,35 @@
+{
+  "id" : "8242a97d-c09e-40c8-928a-681bdc6d40cc",
+  "request" : {
+    "url" : "/users",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      },
+      "Accept" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['userId'] == '1')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['name'] == 'tesSpringCloudContract')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['phone'] == '08234232')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['email'] == 'tesduluaja@mailinator.com')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['address'] == 'cibunar')]"
+    } ]
+  },
+  "response" : {
+    "status" : 201,
+    "body" : "{\"userId\":\"1\",\"name\":\"tesSpringCloudContract\",\"phone\":\"08234232\",\"email\":\"tesduluaja@mailinator.com\",\"address\":\"cibunar\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template", "spring-cloud-contract" ]
+  },
+  "uuid" : "8242a97d-c09e-40c8-928a-681bdc6d40cc"
+}
